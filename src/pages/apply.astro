@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const skillColor = "navy";
+const skillColor2 = "orange";
+const pageTitle = "Apply for a grant";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<h2>Western Australia people can give you support</h2>
+	<p class="paragraph">
+		All our players are giving to grant by sharing a large portion of a
+		ticket with WA organisations. You are an eligible organisation if
+		you’re: - a not-for-profit organisation (i.e. none of the profits go to
+		owners or shareholders); or - a local government authority. Smaller
+		not-for-profits may prefer to be auspiced by an eligible organisation.
+		Contact us for more information if you are considering this approach,
+		noting that your application must be accompanied by a signed Auspicing
+		agreement. A template agreement is available here. Your organisation
+		also needs to: - be an Australian entity and operating within Western
+		Australia - not be operating on behalf of the State or Federal
+		Government - have the authority to undertake the proposed grant
+		activities - have an organisational structure that does not allow for
+		the distribution of profit or personal gain during operation and/or in
+		the event of wind up.
+	</p>
+	<style is:global define:vars={{ skillColor, skillColor2 }}>
+		h1 {
+			color: purple;
+			font-size: 4rem;
+		}
+		.paragraph {
+			color: green;
+			color: var(--skillColor2);
+			font-weight: bold;
+		}
+	</style>
+</BaseLayout>

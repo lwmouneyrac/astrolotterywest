@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Grant from "../../components/Grant.astro";
+
+export async function getStaticPaths() {
+    const allGrants = Object.values(
+        import.meta.glob("../grants/*.md", { eager: true }),
+    );
+
+    return [
+        { params: { tag: "lotterywest" }, props: { grants: allGrants } },
+        { params: { tag: "grant" }, props: { grants: allGrants } },
+        { params: { tag: "Liyan-ngan Nyirrwa" }, props: { grants: allGrants } },
+        { params: { tag: "Yawuru" }, props: { grants: allGrants } },
+        { params: { tag: "animal" }, props: { grants: allGrants } },
+        { params: { tag: "marketing" }, props: { grants: allGrants } },
+    ];
+}
+
+const { tag } = Astro.params;
+const { grants } = Astro.props;
+const filteredGrants = grants.filter((grant: any) =>
+    grant.frontmatter.tags?.includes(tag),
+);
+---
+
+<BaseLayout pageTitle={tag}>
+    <p>Grants tagged with {tag}</p>
+    <ul>
+        {
+            filteredGrants.map((grant: any) => (
+                <Grant url={grant.url} title={grant.frontmatter.title} />
+            ))
+        }
+    </ul>
+</BaseLayout>

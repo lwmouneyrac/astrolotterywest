@@ -7,29 +7,33 @@ export async function getStaticPaths() {
         import.meta.glob("../grants/*.md", { eager: true }),
     );
 
-    return [
-        { params: { tag: "lotterywest" }, props: { grants: allGrants } },
-        { params: { tag: "grant" }, props: { grants: allGrants } },
-        { params: { tag: "Liyan-ngan Nyirrwa" }, props: { grants: allGrants } },
-        { params: { tag: "Yawuru" }, props: { grants: allGrants } },
-        { params: { tag: "animal" }, props: { grants: allGrants } },
-        { params: { tag: "marketing" }, props: { grants: allGrants } },
+    const uniqueTags = [
+        ...new Set(
+            allGrants.map((grant: any) => grant.frontmatter.tags).flat(),
+        ),
     ];
+
+    return uniqueTags.map((tag) => {
+        const filteredGrants = allGrants.filter((grant: any) =>
+            grant.frontmatter.tags.includes(tag),
+        );
+        return {
+            params: { tag },
+            props: { grants: filteredGrants },
+        };
+    });
 }
 
 const { tag } = Astro.params;
 const { grants } = Astro.props;
-const filteredGrants = grants.filter((grant: any) =>
-    grant.frontmatter.tags?.includes(tag),
-);
 ---
 
 <BaseLayout pageTitle={tag}>
     <p>Grants tagged with {tag}</p>
     <ul>
         {
-            filteredGrants.map((grant: any) => (
-                <Grant url={grant.url} title={grant.frontmatter.title} />
+            grants.map((post: any) => (
+                <Grant url={post.url} title={post.frontmatter.title} />
             ))
         }
     </ul>

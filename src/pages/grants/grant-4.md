@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../../layouts/MarkdownGrantLayout.astro
 
 title: Native Animal Rescue 
 author: RSCPA

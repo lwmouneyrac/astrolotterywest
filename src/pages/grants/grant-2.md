@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../../layouts/MarkdownGrantLayout.astro
 
 title: Environs & Yawuru Rangers
 author: 'Lotterywest staff'

@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../../layouts/MarkdownGrantLayout.astro
 
 title: 'Liyan-ngan Nyirrwa Cultural Wellbeing Centre'
 pubDate: 2024-07-01

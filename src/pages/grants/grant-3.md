@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
+layout: ../../layouts/MarkdownGrantLayout.astro
 
 title: That's the Ticket - St Pat's 15s
 author: Marketing

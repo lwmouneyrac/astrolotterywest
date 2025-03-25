@@ -1,0 +1,22 @@
+---
+import Button from "./Button.astro";
+import SearchGlass from "./SearchGlass.astro";
+---
+
+<div class="nav-inputs">
+    <Button label="Login" url="https://play.lotterywest.wa.gov.au/login" />
+    <Button
+        label="Sign Up"
+        url="https://play.lotterywest.wa.gov.au/login?page=sign-up"
+        mode="dark"
+    />
+    <SearchGlass />
+</div>
+
+<style>
+    .nav-inputs {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+</style>

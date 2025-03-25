@@ -1,15 +1,26 @@
 ---
-import Social from "./Social.astro";
+import FooterNavigation from "./FooterNavigation.astro";
+import FooterContactUs from "./FooterContactUs.astro";
+import FooterCopyright from "./FooterCopyright.astro";
 ---
 
 <style>
     footer {
         display: flex;
-        gap: 1rem;
-        margin-top: 2rem;
+
+        width: 100%;
+        background: #0073bc;
+        color: #fff;
+        justify-content: center;
+    }
+    .footer-container {
+        flex-direction: column;
     }
 </style>
 <footer>
-    <Social platform="facebook" username="lotterywest" />
-    <Social platform="youtube" username="@Lotterywest" />
+    <div class="max-width-container footer-container">
+        <FooterNavigation />
+        <FooterContactUs />
+        <FooterCopyright />
+    </div>
 </footer>

@@ -1,4 +1,4 @@
-# Astolotterywest
+# Astrolotterywest
 
 Astro training project for Lotterywest.
 
@@ -11,8 +11,7 @@ pnpm install
 pnpm run dev
 ```
 
-[![Demo](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://astrolotterywest.netlify.app/)
-[![GitHub](https://github.com/codespaces/badge.svg)](https://github.com/lwmouneyrac/astrolotterywest)
+[![Demo](https://img.shields.io/badge/DEMO-blue?style=for-the-badge)](https://img.shields.io/badge/Shield_Buttons-37a779?style=for-the-badge)
 
 
 ## 🧞 Commands
@@ -27,5 +26,3 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm preview`         | Preview your build locally, before deploying     |
 | `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-

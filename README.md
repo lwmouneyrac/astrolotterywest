@@ -4,7 +4,7 @@ Astro training project for Lotterywest.
 
 We are reproducing the Lotterywest website in Astro.
 
-Stage 1: reproduce the header and footer only - do not use tailwind. Do you best.
+Stage 1: reproduce the header and footer only - do not use tailwind. Do you best. Usage of React components are allowed.
 
 ```sh
 pnpm install

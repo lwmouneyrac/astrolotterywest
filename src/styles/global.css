@@ -59,7 +59,7 @@ h1 {
 .nav-links a:focus {}
 
 .nav-logo {
-    width: 110px
+    width: 150px
 }
 
 .expanded {
@@ -72,7 +72,7 @@ h1 {
     .nav-links {
         display: flex;
         width: 100%;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
     }
 
@@ -106,6 +106,7 @@ h1 {
     flex-grow: 1;
     display: flex;
     justify-content: center;
+    height: 75px;
 }
 
 .site-white-top-bar a:has(img) {
@@ -123,4 +124,12 @@ h1 {
 
 .site-white-top-bar a:focus {
     color: #fff;
+}
+
+.site-white-top-bar .nav-menu-links {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }

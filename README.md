@@ -11,7 +11,7 @@ pnpm install
 pnpm run dev
 ```
 
-[![Demo](https://img.shields.io/badge/DEMO-blue?style=for-the-badge)](https://img.shields.io/badge/Shield_Buttons-37a779?style=for-the-badge)
+[![Demo](https://img.shields.io/badge/DEMO-blue?style=for-the-badge)](https://astrolotterywest.netlify.app/)
 
 
 ## 🧞 Commands

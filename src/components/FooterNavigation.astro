@@ -1,15 +1,22 @@
-<div class="nav-links">
-    <a href="/">
-        <img
-            src="https://www.lotterywest.wa.gov.au/++resource++lw.theme/images/icons/lw-logo.svg"
-            alt="Lotterywest logo"
-            class="nav-logo"
-        /></a
-    >
-    <a href="/aboutus/">About us</a>
-    <a href="/games/">Games</a>
-    <a href="/results/">Results</a>
-    <a href="/membership/">Membership</a>
-    <a href="/grants/">Grants</a>
-    <a href="/more/">More</a>
+---
+import FooterNavCol from "./FooterNavCol.astro";
+import FooterNavColLayout from "../layouts/FooterNavColLayout.astro";
+const allFooterNavCols = Object.values(
+    import.meta.glob("../components/footer-nav-columns/*.md", { eager: true }),
+);
+---
+
+<div class="footer-navigation">
+    <!-- <FooterNavCol /> -->
+    {allFooterNavCols.map((footerNavCol: any) => <footerNavCol.Content />)}
 </div>
+
+<style>
+    .footer-navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+</style>

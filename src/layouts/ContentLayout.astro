@@ -1,0 +1,61 @@
+---
+import Crumbtrail from "../components/Crumbtrail.astro";
+const { frontmatter } = Astro.props;
+---
+
+<div class="crumbtrail-and-content">
+    <div class="crumbtrail">
+        <div class="max-width-container">
+            <Crumbtrail />
+        </div>
+    </div>
+    <div class="content">
+        <div class="max-width-container content-container">
+            <h1 class="content-title">{frontmatter.title}</h1>
+            <slot />
+            {
+                frontmatter.image && frontmatter.image.url && (
+                    <img
+                        src={frontmatter.image.url}
+                        alt={frontmatter.image.alt}
+                        class="content-image"
+                    />
+                )
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    .crumbtrail-and-content {
+        color: #2c1b48;
+    }
+
+    .crumbtrail {
+        background: white;
+        display: flex;
+        justify-content: center;
+        font-size: 14px;
+    }
+    .content {
+        background: #fff3e8;
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .content-container {
+        background: white;
+        display: flex;
+        flex-direction: column;
+        padding: 40px;
+    }
+
+    .content-image {
+        width: 100%;
+    }
+
+    .content-title {
+        margin-bottom: 30px;
+    }
+</style>

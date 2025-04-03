@@ -1,22 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import BlockGrants from "../components/Grants.astro";
-const allGrants = Object.values(
-	import.meta.glob("./grants/*.md", { eager: true }),
+
+const allContents = Object.values(
+	import.meta.glob("../content/*.md", { eager: true }),
 );
 
 const pageTitle = "Grants";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<iframe
-		width="560"
-		height="315"
-		src="https://www.youtube.com/embed/1mvIpRlbO00?si=M8xn2vOG0NIm9a3r"
-		title="YouTube video player"
-		frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		referrerpolicy="strict-origin-when-cross-origin"
-		allowfullscreen></iframe>
-	<BlockGrants />
+	{allContents.map((content: any) => <content.Content />)}
 </BaseLayout>

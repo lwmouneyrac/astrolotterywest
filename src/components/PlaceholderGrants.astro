@@ -1,0 +1,14 @@
+---
+import Grant from "./Grant.astro";
+const allGrants = Object.values(
+    import.meta.glob("../pages/grants/*.md", { eager: true }),
+);
+---
+
+<ul>
+    {
+        allGrants.map((grant: any) => (
+            <Grant url={grant.url} title={grant.frontmatter.title} />
+        ))
+    }
+</ul>

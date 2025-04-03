@@ -91,7 +91,7 @@ h1 {
 
 .container-content {
     min-height: 70vw;
-    padding-top: 90px;;
+    padding-top: 70px;;
 }
 
 .max-width-container {
@@ -138,4 +138,12 @@ h1 {
     color: white;
     text-decoration: none;
     font-size: 14px;
+}
+
+.content p {
+    margin-top: 0;
+}
+
+.content a {
+    color: #0073bc
 }

@@ -29,6 +29,10 @@ const { frontmatter } = Astro.props;
 <style>
     .crumbtrail-and-content {
         color: #2c1b48;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .crumbtrail {
@@ -43,6 +47,7 @@ const { frontmatter } = Astro.props;
         justify-content: center;
         padding-top: 40px;
         padding-bottom: 40px;
+        flex: 1;
     }
     .content-container {
         background: white;

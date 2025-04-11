@@ -91,7 +91,8 @@ h1 {
 
 .container-content {
     min-height: 70vw;
-    padding-top: 55px;;
+    padding-top: 55px;
+    display: flex;
 }
 
 .max-width-container {

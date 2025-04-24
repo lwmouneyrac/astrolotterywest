@@ -1,22 +1,13 @@
 ---
-import FooterNavCol from "./FooterNavCol.astro";
-import FooterNavColLayout from "../layouts/FooterNavColLayout.astro";
 const allFooterNavCols = Object.values(
     import.meta.glob("../components/footer-nav-columns/*.md", { eager: true }),
 );
 ---
 
-<div class="footer-navigation">
-    <!-- <FooterNavCol /> -->
-    {allFooterNavCols.map((footerNavCol: any) => <footerNavCol.Content />)}
-</div>
-
-<style>
-    .footer-navigation {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-bottom: 20px;
-        margin-top: 20px;
+<div class="flex flex-row justify-between mb-5 mt-5">
+    {
+        allFooterNavCols.map((footerNavCol: any) => (
+            <footerNavCol.Content linkClass="text-white no-underline text-sm" />
+        ))
     }
-</style>
+</div>

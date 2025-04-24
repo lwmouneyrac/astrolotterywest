@@ -1,5 +1,7 @@
-// tailwind.config.js
-module.exports = {
+import type { Config } from 'tailwindcss'
+
+const config: Config = {
+    content: ['./src/**/*.{astro,html,js,ts,jsx,tsx}'],
     theme: {
         extend: {
             colors: {
@@ -8,14 +10,12 @@ module.exports = {
                 secondary: '#2c1b48',
                 accent: '#ff9776',
             },
-
             fontFamily: {
                 sans: ['Poppins', 'sans-serif'],
             },
             lineHeight: {
                 normal: '1.4',
             },
-
             fontSize: {
                 base: '16px',
                 h1: '2.5rem',
@@ -29,3 +29,5 @@ module.exports = {
         },
     },
 };
+
+export default config;

@@ -1,60 +1,9 @@
 ---
-const { mode = "light", url, label } = Astro.props;
-const className = mode === "dark" ? "button-dark" : "button-light";
+const { url, label } = Astro.props;
 ---
 
-<a href={url} class={`button ${className}`}>{label}</a>
-
-<style>
-    .button {
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        display: -webkit-inline-box;
-        display: -ms-inline-flexbox;
-        display: inline-flex;
-        position: relative;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-transition: all 0.5s;
-        -o-transition: all 0.5s;
-        transition: all 0.5s;
-        border: 1px solid #0073bc;
-        border-radius: 4px;
-        background: none;
-        cursor: pointer;
-        padding: 8px 20px;
-        min-width: 100px;
-        min-height: 33px;
-        text-align: center;
-        text-decoration: none !important;
-        line-height: 1.1em;
-        font-family: poppins, sans-serif;
-        font-size: 100%;
-        font-weight: 700;
-        background-color: #fff;
-        color: #0073bc;
-        height: auto;
-        width: auto;
-        margin: 20px 2px;
-        font-size: 80%;
-    }
-    .button:hover {
-        background: #0073bc;
-        color: white;
-    }
-
-    .button.button-dark {
-        background: #0073bc;
-        color: white;
-    }
-    .button.button-dark:hover {
-        background: white;
-        color: #0073bc;
-    }
-    .light-button {
-    }
-</style>
+<a
+    href={url}
+    class={`inline-flex items-center justify-center transition-all duration-500 border border-primary rounded bg-white cursor-pointer px-5 py-2 min-w-[100px] min-h-[33px] text-center no-underline leading-tight font-poppins font-bold text-primary m-5 text-sm hover:bg-primary hover:text-white`}
+    >{label}</a
+>

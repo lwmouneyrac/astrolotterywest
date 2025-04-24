@@ -3,16 +3,7 @@ import SiteBlueTopBar from "./SiteBlueTopBar.astro";
 import SiteWhiteTopBar from "./SiteWhiteTopBar.astro";
 ---
 
-<style>
-	header {
-		display: flex;
-		flex-direction: column;
-		position: fixed;
-		top: 0;
-		width: 100%;
-	}
-</style>
-<header>
+<header class="flex flex-col fixed top-0 w-full">
 	<SiteBlueTopBar />
 	<SiteWhiteTopBar />
 </header>

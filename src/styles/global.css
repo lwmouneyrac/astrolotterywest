@@ -1,24 +1,4 @@
-html {
-    background-color: #fff;
-    font-family: poppins, sans-serif;
-}
-
-body {
-    margin: 0;
-    width: 100%;
-    line-height: 1.4em;
-    font-weight: 400;
-    font-size: 16px;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-h1 {
-    margin: 1rem 0;
-    font-size: 2.5rem;
-}
+@import "tailwindcss";
 
 /* nav styles */
 
@@ -95,11 +75,11 @@ h1 {
     display: flex;
 }
 
+
 .max-width-container {
-    max-width: 1200px;
-    display: flex;
-    width: 90%;
+    @apply max-w-screen-xl flex w-11/12;
 }
+    
 
 .site-white-top-bar {
     background-color: #fff;

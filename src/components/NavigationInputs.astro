@@ -3,7 +3,7 @@ import Button from "./Button.astro";
 import SearchGlass from "./SearchGlass.astro";
 ---
 
-<div class="nav-inputs">
+<div class="flex">
     <Button label="Login" url="https://play.lotterywest.wa.gov.au/login" />
     <Button
         label="Sign Up"
@@ -12,11 +12,3 @@ import SearchGlass from "./SearchGlass.astro";
     />
     <SearchGlass />
 </div>
-
-<style>
-    .nav-inputs {
-        display: flex;
-        flex-direction: row;
-        gap: 15px;
-    }
-</style>

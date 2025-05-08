@@ -3,13 +3,13 @@ import Crumbtrail from "../components/Crumbtrail.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<div class="flex flex-1 flex-col justify-between text-secondary">
+<div class="flex flex-col justify-between text-secondary">
     <div class="flex justify-center bg-white text-sm">
         <div class="max-width-container">
             <Crumbtrail />
         </div>
     </div>
-    <div class="flex flex-1 justify-center bg-[#fff3e8] py-10">
+    <div class="flex justify-center bg-[#fff3e8] py-10">
         <div class="max-width-container flex flex-col bg-white p-10">
             <h1 class="mb-7">{frontmatter.title}</h1>
             <slot />

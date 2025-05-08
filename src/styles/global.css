@@ -9,5 +9,14 @@
 }
 
 .max-width-container {
-  @apply max-w-[1200px] flex;
+  @apply w-[90%] max-w-[1200px] flex mx-auto;
+}
+
+/* Heading styles */
+h1 {
+  @apply text-secondary font-bold text-[40px] my-[10px] font-[var(--default-font-family)] leading-normal;
+}
+
+h2, h3 {
+  @apply font-bold leading-normal my-[10px];
 }

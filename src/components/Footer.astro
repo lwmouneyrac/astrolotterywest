@@ -4,20 +4,8 @@ import FooterContactUs from "./FooterContactUs.astro";
 import FooterCopyright from "./FooterCopyright.astro";
 ---
 
-<style>
-    footer {
-        display: flex;
-        width: 100%;
-        background: #0073bc;
-        color: #fff;
-        justify-content: center;
-    }
-    .footer-container {
-        flex-direction: column;
-    }
-</style>
-<footer>
-    <div class="max-width-container footer-container">
+<footer class="flex w-full bg-primary text-white justify-center">
+    <div class="max-width-container flex-col">
         <FooterNavigation />
         <FooterContactUs />
         <FooterCopyright />

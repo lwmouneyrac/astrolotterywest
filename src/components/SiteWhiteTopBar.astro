@@ -5,11 +5,32 @@ import NavigationInputs from "./NavigationInputs.astro";
 ---
 
 <div
-    class="bg-white border-b-5 border-primary flex-grow flex justify-center h-18"
+    class="bg-white border-b-[5px] border-primary flex justify-center z-10"
+    style="background-color: white;"
 >
-    <div class="max-width-container">
-        <Hamburger />
-        <Navigation />
-        <NavigationInputs />
+    <div class="max-width-container flex items-center justify-between py-4 w-full max-w-[1200px]">
+        {/* Hamburger hidden by default for desktop, add responsive classes like 'md:hidden' if needed */}
+        <div class="hidden">
+            <Hamburger />
+        </div>
+        
+        <!-- Logo on the left -->
+        <a href="/" class="flex-shrink-0">
+            <img
+                src="https://www.lotterywest.wa.gov.au/++resource++lw.theme/images/icons/lw-logo.svg"
+                alt="Lotterywest logo"
+                class="h-10"
+            />
+        </a>
+        
+        <!-- Navigation in the middle -->
+        <div class="flex-grow flex justify-center">
+            <Navigation />
+        </div>
+        
+        <!-- Login/Signup buttons and search on the right -->
+        <div class="flex-shrink-0">
+            <NavigationInputs />
+        </div>
     </div>
 </div>

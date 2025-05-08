@@ -1,9 +1,11 @@
 ---
-const { url, label } = Astro.props;
+const { url, label, class: extraClasses = "" } = Astro.props;
+
+const defaultClasses = "inline-flex items-center justify-center transition duration-500 border border-primary rounded bg-white cursor-pointer px-5 py-2 min-w-[100px] min-h-[33px] text-center no-underline leading-tight font-default font-bold text-primary m-5 text-sm hover:bg-primary hover:text-white";
 ---
 
 <a
     href={url}
-    class={`inline-flex items-center justify-center transition-all duration-500 border border-primary rounded bg-white cursor-pointer px-5 py-2 min-w-[100px] min-h-[33px] text-center no-underline leading-tight font-poppins font-bold text-primary m-5 text-small hover:bg-primary hover:text-white`}
+    class:list={[defaultClasses, extraClasses]}
     >{label}</a
 >

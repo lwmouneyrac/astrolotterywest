@@ -6,27 +6,11 @@ import { Icon } from "astro-icon/components";
 <div class="social-container">
     <a
         href={`http://www.${platform}.com/${username}`}
-        class="icon icon-round-white"
+        class="bg-white rounded-full flex"
     >
-        <Icon class="social-logo" name={platform} />
+        <Icon
+            class="text-primary w-[50px] h-[50px] p-2.5 flex justify-center items-center"
+            name={platform}
+        />
     </a>
 </div>
-
-<style>
-    .icon-round-white {
-        background-color: white;
-        border-radius: 100%;
-        display: flex;
-    }
-
-    .social-logo {
-        color: #0073bc;
-        width: 50px;
-        height: 50px;
-        padding: 10px;
-        justify-content: center;
-        justify-self: center;
-        display: flex;
-        align-items: center;
-    }
-</style>

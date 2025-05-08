@@ -3,12 +3,16 @@ import Button from "./Button.astro";
 import SearchGlass from "./SearchGlass.astro";
 ---
 
-<div class="flex">
-    <Button label="Login" url="https://play.lotterywest.wa.gov.au/login" />
+<div class="flex items-center gap-x-3"> {/* Adjusted gap */}
+    <Button
+        label="Login"
+        url="https://play.lotterywest.wa.gov.au/login"
+        class="!bg-white !text-primary !border-primary hover:!bg-gray-100 !m-0 !px-4 !py-1.5"
+    />
     <Button
         label="Sign Up"
         url="https://play.lotterywest.wa.gov.au/login?page=sign-up"
-        mode="dark"
+        class="!bg-primary !text-white !border-primary hover:!bg-primary/90 !m-0 !px-4 !py-1.5"
     />
-    <SearchGlass />
+    <SearchGlass /> {/* We'll adjust SearchGlass color in its own file if needed */}
 </div>

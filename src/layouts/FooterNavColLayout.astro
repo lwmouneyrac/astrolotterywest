@@ -2,14 +2,7 @@
 const { frontmatter } = Astro.props;
 ---
 
-<div class="footer-nav-col">
+<div class="flex-1 basis-0 w-0">
     <h4>{frontmatter.title}</h4>
     <slot />
 </div>
-
-<style>
-    .footer-nav-col {
-        flex: 1 1 0;
-        width: 0;
-    }
-</style>

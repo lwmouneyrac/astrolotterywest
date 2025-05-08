@@ -1,16 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #0073bc;
-    --color-secondary: #2c1b48;
-    --color-accent: #ff9776;
-    --color-background: #ffffff;
-    --default-font-family: 'Poppins';
-    /* --text-medium--line-height: 1.4em;
-    --text-base--line-height: 1.4em; */
+  --color-primary: #0073bc;
+  --color-secondary: #2c1b48;
+  --color-accent: #ff9776;
+  --color-background: #ffffff;
+  --default-font-family: 'Poppins';
 }
 
 .max-width-container {
-    @apply max-w-screen-xl flex;
+  @apply max-w-[1200px] flex;
 }
-

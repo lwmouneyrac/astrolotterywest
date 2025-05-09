@@ -82,7 +82,7 @@ const blogPosts = [
 
 <div class="w-full mb-12">
   <!-- Grid layout with alternating patterns -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr">
     {blogPosts.map((post, index) => {
       const rowIndex = Math.floor(index / 2);
       const isFirstInRow = index % 2 === 0;
@@ -91,7 +91,7 @@ const blogPosts = [
       const isRectangle = (rowIndex % 2 === 0 && isFirstInRow) || (rowIndex % 2 === 1 && !isFirstInRow);
       
       return (
-        <div class={isRectangle ? "col-span-1" : "col-span-1"}>
+        <div class={isRectangle ? "col-span-2" : "col-span-1"}>
           {isRectangle ? (
             <BlogCardRectangle 
               title={post.title}

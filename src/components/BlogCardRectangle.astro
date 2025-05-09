@@ -2,7 +2,7 @@
 const { title, text, imageUrl, link } = Astro.props;
 ---
 
-<div class="blog-card-rectangle bg-white rounded-lg shadow-md overflow-hidden">
+<div class="blog-card-rectangle bg-white rounded-lg shadow-md overflow-hidden h-full">
     <div class="flex flex-col md:flex-row h-full">
         <div class="md:w-1/2 h-full">
             <img src={imageUrl} alt={title} class="w-full h-full object-cover" />

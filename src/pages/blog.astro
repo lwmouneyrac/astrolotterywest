@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import Crumbtrail from "../components/Crumbtrail.astro";
+
+
+const pageTitle = "Grants";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<div class="flex flex-col justify-between text-secondary">
+    <div class="flex justify-center bg-white text-sm">
+        <div class="max-width-container">
+            <Crumbtrail />
+        </div>
+    </div>
+    <div class="flex justify-center bg-[#fff3e8] py-10">
+        <div class="max-width-container flex flex-col bg-white p-10">
+            <h1 class="mb-7">The winning experience blog</h1>
+            <slot />
+           
+        </div>
+    </div>
+</div>
+</BaseLayout>

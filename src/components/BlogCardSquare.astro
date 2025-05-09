@@ -1,0 +1,22 @@
+---
+const { title, text, imageUrl, link } = Astro.props;
+---
+
+<div 
+    class="blog-card-square relative bg-white rounded-lg shadow-md overflow-hidden h-full aspect-square"
+    style={`background-image: url(${imageUrl}); background-size: cover; background-position: center;`}
+>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30"></div>
+    <div class="relative z-10 p-6 flex flex-col justify-between h-full">
+        <div>
+            <h3 class="text-xl font-bold mb-2 text-white">{title}</h3>
+            <p class="text-gray-200 text-sm mb-4">{text}</p>
+        </div>
+        <a 
+            href={link} 
+            class="inline-flex items-center justify-center transition duration-500 border border-primary rounded bg-white cursor-pointer min-w-[100px] min-h-[33px] text-center no-underline leading-tight font-default font-bold text-primary text-sm hover:bg-primary hover:text-white w-fit px-4 py-1.5"
+        >
+            Read more
+        </a>
+    </div>
+</div>

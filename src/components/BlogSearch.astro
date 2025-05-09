@@ -1,0 +1,38 @@
+---
+import Button from "./Button.astro";
+import SearchGlass from "./SearchGlass.astro";
+---
+
+<div class="w-full mb-8">
+    <p class="text-sm font-medium mb-2">Search by text and date:</p>
+    <div class="flex flex-wrap gap-4 items-center">
+        <!-- Search input field -->
+        <div class="relative flex-grow min-w-[200px]">
+            <input 
+                type="text" 
+                placeholder="Search by text" 
+                class="w-full border border-gray-300 rounded py-2 px-12 text-sm focus:outline-none focus:border-primary"
+            />
+            <div class="absolute left-3 top-1/2 transform -translate-y-1/2">
+                <SearchGlass />
+            </div>
+        </div>
+        
+        <!-- Date range inputs -->
+        <div class="flex gap-2 items-center">
+             <input 
+                type="text" 
+                placeholder="date range" 
+                class="w-full border border-gray-300 rounded py-2 px-12 text-sm focus:outline-none focus:border-primary"
+            />
+            
+        </div>
+        
+        <!-- Search button -->
+        <Button
+            label="Search"
+            url="#"
+            class="text-primary bg-white  !border-primary hover:!bg-primary/90 !m-0 !px-4 !py-1.5"
+        />
+    </div>
+</div>

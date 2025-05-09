@@ -4,79 +4,84 @@ import BlogCardSquare from "./BlogCardSquare.astro";
 import AdPlayOnlineSquare from "./AdPlayOnlineSquare.astro";
 import Button from "./Button.astro";
 
-// Fake blog data for the grid
+// Real blog data from Lotterywest
 const blogPosts = [
   {
-    title: "Latest Lottery Winners Announced",
-    text: "Meet the lucky winners from last month's jackpot draw and hear their inspiring stories.",
-    imageUrl: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "#post-1"
+    title: "A Super win for WA",
+    text: "Tropical island is first stop for Superdraw winner",
+    imageUrl: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/a-super-win-for-wa/@@images/be208ff2-5a0a-4017-8e69-65f40ad4f82c.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/a-super-win-for-wa",
+    category: "Winner stories"
   },
   {
-    title: "How to Pick Your Lucky Numbers",
-    text: "Learn the strategies that could increase your chances of winning big.",
-    imageUrl: "https://images.unsplash.com/photo-1518133835878-5a93cc3f89e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "#post-2"
+    title: "Play online",
+    text: "Play Lotterywest games online with a Lotteywest account.",
+    imageUrl: "https://www.lotterywest.wa.gov.au/page-content-modules/ad-tiles/ad-tile-images/play-online-play-now/@@images/5bb18a02-6b1c-4c6d-bcd7-ea3e2b29ae7c.png",
+    link: "https://play.lotterywest.wa.gov.au/login"
   },
   {
-    title: "Community Projects Funded This Year",
-    text: "Discover how lottery proceeds have made a difference in local communities across the region.",
-    imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "#post-3"
+    title: "Twinning is winning",
+    text: "Set of Perth twins are Set for Life",
+    imageUrl: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/twinning-is-winning/@@images/bc934068-dcac-4014-b1da-bd93ecc06b10.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/twinning-is-winning",
+    category: "Winner stories"
   },
   {
-    title: "Behind the Scenes: Draw Night",
-    text: "An exclusive look at what happens during the live lottery draws.",
-    imageUrl: "https://images.unsplash.com/photo-1606836591695-4d58a73eba1e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "#post-4"
+    title: "Holiday of a lifetime!",
+    text: "Thanks to Saturday Lotto",
+    imageUrl: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/holiday-of-a-lifetime/@@images/acb3c001-b689-4b25-92b5-0c97e729292a.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/holiday-of-a-lifetime",
+    category: "Winner stories"
   },
   {
-    title: "New Games Coming Soon",
-    text: "Get a sneak peek at the exciting new lottery games launching next month.",
-    imageUrl: "https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "#post-5"
+    title: "Two new WA millionaires!",
+    text: "Wednesday Lotto crowns WA's latest millionaires",
+    imageUrl: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/two-new-wa-millionaires/@@images/800cb16a-f3ac-443b-81db-45b9e87fc886.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/two-new-wa-millionaires",
+    category: "Winner stories"
   },
   {
-    title: "Lottery History: Biggest Jackpots",
-    text: "A look back at some of the biggest jackpots in lottery history and the winners who claimed them.",
-    imageUrl: "https://images.unsplash.com/photo-1524673450801-b5aa9b621b76?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "#post-6"
+    title: "Where the money goes",
+    text: "",
+    imageUrl: "https://www.lotterywest.wa.gov.au/page-content-modules/lotterywest/where-the-money-goes/@@images/183b14bb-7e57-4719-bd20-cef0aa0cb28c.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/where-the-money-goes",
+    buttonText: "Find out more"
   },
   {
-    title: "Responsible Gaming Tips",
-    text: "Important advice on how to enjoy lottery games responsibly.",
-    imageUrl: "https://images.unsplash.com/photo-1608111283890-abe5cdeea305?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "#post-7"
+    title: "South West duo win in Saturday Lotto!",
+    text: "Taking home over $1.6 million each",
+    imageUrl: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/south-west-duo-win-in-saturday-lotto/@@images/8e5d1de5-e461-4426-8f90-30a9b91d00e3.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/south-west-duo-win-in-saturday-lotto"
   },
   {
-    title: "Retailer Spotlight",
-    text: "Meet the local retailers who help bring lottery excitement to your neighborhood.",
-    imageUrl: "https://images.unsplash.com/photo-1580913428706-c311e67898b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "#post-8"
+    title: "WA syndicate's Powerballin' win",
+    text: "Taking home $4 million",
+    imageUrl: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/wa-syndicates-powerballin-win/@@images/7f525e7e-9c04-49fd-a19d-fb9d845d0297.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/wa-syndicates-powerballin-win"
   },
   {
-    title: "Lottery Funds in Education",
-    text: "How lottery proceeds are supporting educational initiatives in schools across the state.",
-    imageUrl: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "#post-9"
+    title: "Set for Life streak continues!",
+    text: "More WA wins, only a week apart",
+    imageUrl: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/set-for-life-streak-continues/@@images/fbed72c5-f2d9-4c6a-bfdd-3f0e4299a19a.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/set-for-life-streak-continues"
   },
   {
-    title: "Winners' Celebration Event",
-    text: "Highlights from our annual event celebrating this year's big winners.",
-    imageUrl: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "#post-10"
+    title: "A late finish at work leads to Lotto win",
+    text: "A Wanneroo man wins $738,000 Saturday Lotto prize.",
+    imageUrl: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/a-late-finish-at-work-leads-to-lotto-win/@@images/7c7aa799-575b-48a6-ab23-b42a8711d6c2.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/a-late-finish-at-work-leads-to-lotto-win"
   },
   {
-    title: "Your Odds Explained",
-    text: "A straightforward explanation of lottery odds and what they really mean.",
-    imageUrl: "https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "#post-11"
+    title: "WA syndicate wins big!",
+    text: "Sharing in $1.2 million",
+    imageUrl: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/wa-syndicate-wins-big/@@images/2324f4d2-803e-49f9-b706-bc84e5d3b263.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/wa-syndicate-wins-big"
   },
   {
-    title: "Lottery App Updates",
-    text: "New features coming to our mobile app to enhance your lottery experience.",
-    imageUrl: "https://images.unsplash.com/photo-1553095066-5014bc7b7f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    link: "#post-12"
+    title: "Another Saturday Lotto win!",
+    text: "Our 68th Division One win so far this year.",
+    imageUrl: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/another-saturday-lotto-win/@@images/1ab04a16-83b3-4379-8a20-eb395a0cdf43.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/another-saturday-lotto-win"
   }
 ];
 ---
@@ -107,6 +112,8 @@ const blogPosts = [
                 text={post.text}
                 imageUrl={post.imageUrl}
                 link={post.link}
+                category={post.category}
+                buttonText={post.buttonText || "Read more"}
               />
             ) : (
               <BlogCardSquare
@@ -114,6 +121,8 @@ const blogPosts = [
                 text={post.text}
                 imageUrl={post.imageUrl}
                 link={post.link}
+                category={post.category}
+                buttonText={post.buttonText || "Read more"}
               />
             )}
           </div>

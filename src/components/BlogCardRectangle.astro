@@ -1,5 +1,5 @@
 ---
-const { title, text, imageUrl, link } = Astro.props;
+const { title, text, imageUrl, link, category, buttonText = "Read more" } = Astro.props;
 ---
 
 <div class="blog-card-rectangle bg-white rounded-lg shadow-md overflow-hidden h-full">
@@ -9,14 +9,15 @@ const { title, text, imageUrl, link } = Astro.props;
         </div>
         <div class="md:w-1/2 p-6 flex flex-col justify-between">
             <div>
+                {category && <small class="text-xs uppercase tracking-wider text-gray-500 mb-1 block">{category}</small>}
                 <h3 class="text-xl font-bold mb-2">{title}</h3>
-                <p class="text-gray-600 text-sm mb-4">{text}</p>
+                {text && <p class="text-gray-600 text-sm mb-4">{text}</p>}
             </div>
-            <a 
-                href={link} 
+            <a
+                href={link}
                 class="inline-flex items-center justify-center transition duration-500 border border-primary rounded bg-white cursor-pointer min-w-[100px] min-h-[33px] text-center no-underline leading-tight font-default font-bold text-primary text-sm hover:bg-primary hover:text-white w-fit px-4 py-1.5"
             >
-                Read more
+                {buttonText}
             </a>
         </div>
     </div>

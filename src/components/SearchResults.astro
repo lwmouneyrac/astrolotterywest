@@ -1,6 +1,7 @@
 ---
 import BlogCardRectangle from "./BlogCardRectangle.astro";
 import BlogCardSquare from "./BlogCardSquare.astro";
+import AdPlayOnlineSquare from "./AdPlayOnlineSquare.astro";
 import Button from "./Button.astro";
 
 // Fake blog data for the grid
@@ -90,25 +91,34 @@ const blogPosts = [
       // Determine if this should be a rectangle or square card based on position
       const isRectangle = (rowIndex % 2 === 0 && isFirstInRow) || (rowIndex % 2 === 1 && !isFirstInRow);
       
-      return (
-        <div class={isRectangle ? "col-span-2" : "col-span-1"}>
-          {isRectangle ? (
-            <BlogCardRectangle 
-              title={post.title}
-              text={post.text}
-              imageUrl={post.imageUrl}
-              link={post.link}
-            />
-          ) : (
-            <BlogCardSquare
-              title={post.title}
-              text={post.text}
-              imageUrl={post.imageUrl}
-              link={post.link}
-            />
-          )}
-        </div>
-      );
+      // Special case for the second item (index 1) - always show the ad square
+      if (index === 1) {
+        return (
+          <div class="col-span-1">
+            <AdPlayOnlineSquare />
+          </div>
+        );
+      } else {
+        return (
+          <div class={isRectangle ? "col-span-2" : "col-span-1"}>
+            {isRectangle ? (
+              <BlogCardRectangle
+                title={post.title}
+                text={post.text}
+                imageUrl={post.imageUrl}
+                link={post.link}
+              />
+            ) : (
+              <BlogCardSquare
+                title={post.title}
+                text={post.text}
+                imageUrl={post.imageUrl}
+                link={post.link}
+              />
+            )}
+          </div>
+        );
+      }
     })}
   </div>
 

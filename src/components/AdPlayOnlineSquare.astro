@@ -1,0 +1,32 @@
+---
+import Button from "./Button.astro";
+---
+
+<div class="aspect-square h-full w-full">
+    <div 
+        class="blog-card-square relative bg-white rounded-lg shadow-md overflow-hidden h-full w-full"
+        style="background-image: url('https://www.lotterywest.wa.gov.au/page-content-modules/ad-tiles/ad-tile-images/play-online-play-now/@@images/5bb18a02-6b1c-4c6d-bcd7-ea3e2b29ae7c.png'); background-size: cover; background-position: center;"
+    >
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30"></div>
+        <div class="relative z-10 p-6 flex flex-col justify-between h-full">
+            <div>
+                <h3 class="text-xl font-bold mb-2 text-white">Play online</h3>
+                <p class="text-gray-200 text-sm mb-4">Play Lotterywest games online with a Lotteywest account.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a 
+                    href="https://play.lotterywest.wa.gov.au/login" 
+                    class="inline-flex items-center justify-center transition duration-500 border border-primary rounded bg-white cursor-pointer min-w-[100px] min-h-[33px] text-center no-underline leading-tight font-default font-bold text-primary text-sm hover:bg-primary hover:text-white w-fit px-4 py-1.5"
+                >
+                    Play online
+                </a>
+                <a 
+                    href="https://play.lotterywest.wa.gov.au/login?page=sign-up" 
+                    class="inline-flex items-center justify-center transition duration-500 border border-primary rounded bg-primary cursor-pointer min-w-[100px] min-h-[33px] text-center no-underline leading-tight font-default font-bold text-white text-sm hover:bg-primary/90 w-fit px-4 py-1.5"
+                >
+                    Create account
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

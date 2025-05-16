@@ -1,0 +1,164 @@
+---
+import BlogCardRectangle from "./BlogCardRectangle.astro";
+import BlogCardSquare from "./BlogCardSquare.astro";
+import AdPlayOnlineSquare from "./AdPlayOnlineSquare.astro";
+import Button from "./Button.astro";
+
+// Real blog data from Lotterywest (the ads are already injected in it)
+const blogPosts = [
+  {
+    title: "A Super win for WA",
+    text: "Tropical island is first stop for Superdraw winner",
+    imageUrl:
+      "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/a-super-win-for-wa/@@images/be208ff2-5a0a-4017-8e69-65f40ad4f82c.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/a-super-win-for-wa",
+    category: "Winner stories",
+  },
+  {
+    title: "Play online",
+    text: "Play Lotterywest games online with a Lotteywest account.",
+    imageUrl:
+      "https://www.lotterywest.wa.gov.au/page-content-modules/ad-tiles/ad-tile-images/play-online-play-now/@@images/5bb18a02-6b1c-4c6d-bcd7-ea3e2b29ae7c.png",
+    link: "https://play.lotterywest.wa.gov.au/login",
+    buttonText: "Play online",
+    secondLink: "https://play.lotterywest.wa.gov.au/login?page=sign-up",
+    secondButtonText: "Create account",
+    buttonStyle: "dark",
+  },
+  {
+    title: "Twinning is winning",
+    text: "Set of Perth twins are Set for Life",
+    imageUrl:
+      "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/twinning-is-winning/@@images/bc934068-dcac-4014-b1da-bd93ecc06b10.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/twinning-is-winning",
+    category: "Winner stories",
+    buttonStyle: "dark",
+  },
+  {
+    title: "Holiday of a lifetime!",
+    text: "Thanks to Saturday Lotto",
+    imageUrl:
+      "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/holiday-of-a-lifetime/@@images/acb3c001-b689-4b25-92b5-0c97e729292a.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/holiday-of-a-lifetime",
+    category: "Winner stories",
+  },
+  {
+    title: "Two new WA millionaires!",
+    text: "Wednesday Lotto crowns WA's latest millionaires",
+    imageUrl:
+      "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/two-new-wa-millionaires/@@images/800cb16a-f3ac-443b-81db-45b9e87fc886.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/two-new-wa-millionaires",
+    category: "Winner stories",
+  },
+  {
+    title: "Where the money goes",
+    text: "",
+    imageUrl:
+      "https://www.lotterywest.wa.gov.au/page-content-modules/lotterywest/where-the-money-goes/@@images/183b14bb-7e57-4719-bd20-cef0aa0cb28c.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/where-the-money-goes",
+    buttonText: "Find out more",
+    buttonStyle: "dark",
+  },
+  {
+    title: "South West duo win in Saturday Lotto!",
+    text: "Taking home over $1.6 million each",
+    imageUrl:
+      "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/south-west-duo-win-in-saturday-lotto/@@images/8e5d1de5-e461-4426-8f90-30a9b91d00e3.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/south-west-duo-win-in-saturday-lotto",
+    bgStyle: "clear",
+  },
+  {
+    title: "WA syndicate's Powerballin' win",
+    text: "Taking home $4 million",
+    imageUrl:
+      "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/wa-syndicates-powerballin-win/@@images/7f525e7e-9c04-49fd-a19d-fb9d845d0297.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/wa-syndicates-powerballin-win",
+  },
+  {
+    title: "Set for Life streak continues!",
+    text: "More WA wins, only a week apart",
+    imageUrl:
+      "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/set-for-life-streak-continues/@@images/fbed72c5-f2d9-4c6a-bfdd-3f0e4299a19a.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/set-for-life-streak-continues",
+  },
+  {
+    title: "A late finish at work leads to Lotto win",
+    text: "A Wanneroo man wins $738,000 Saturday Lotto prize.",
+    imageUrl:
+      "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/a-late-finish-at-work-leads-to-lotto-win/@@images/7c7aa799-575b-48a6-ab23-b42a8711d6c2.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/a-late-finish-at-work-leads-to-lotto-win",
+    bgStyle: "clear",
+  },
+  {
+    title: "WA syndicate wins big!",
+    text: "Sharing in $1.2 million",
+    imageUrl:
+      "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/wa-syndicate-wins-big/@@images/2324f4d2-803e-49f9-b706-bc84e5d3b263.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/wa-syndicate-wins-big",
+    bgStyle: "clear",
+  },
+  {
+    title: "Another Saturday Lotto win!",
+    text: "Our 68th Division One win so far this year.",
+    imageUrl:
+      "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/another-saturday-lotto-win/@@images/1ab04a16-83b3-4379-8a20-eb395a0cdf43.jpeg",
+    link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/another-saturday-lotto-win",
+  },
+];
+---
+
+<div class="mb-12">
+  <!-- Grid layout with alternating patterns -->
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 auto-rows-[max(340px)] gap-6"
+  >
+    {
+      blogPosts.map((post, index) => {
+        const rowIndex = Math.floor(index / 2); // two items per row
+        const isFirstInRow = index % 2 === 0;
+
+        // Determine if this should be a rectangle or square card based on position
+        const isRectangle =
+          (rowIndex % 2 === 0 && isFirstInRow) ||
+          (rowIndex % 2 === 1 && !isFirstInRow);
+
+        return (
+          <div class={isRectangle ? "col-span-1 lg:col-span-2" : "col-span-1"}>
+            {isRectangle ? (
+              <BlogCardRectangle
+                title={post.title}
+                text={post.text}
+                imageUrl={post.imageUrl}
+                link={post.link}
+                category={post.category}
+                buttonText={post.buttonText || "Read more"}
+              />
+            ) : (
+              <BlogCardSquare
+                title={post.title}
+                text={post.text}
+                imageUrl={post.imageUrl}
+                link={post.link}
+                category={post.category}
+                buttonText={post.buttonText || "Read more"}
+                secondLink={post.secondLink}
+                secondButtonText={post.secondButtonText || "Check me"}
+                buttonStyle={post.buttonStyle}
+                bgStyle={post.bgStyle}
+              />
+            )}
+          </div>
+        );
+      })
+    }
+  </div>
+
+  <!-- Load more button -->
+  <div class="flex justify-center mt-10">
+    <Button
+      label="Load more"
+      url="#"
+      class="!bg-primary !text-white !border-primary hover:!bg-primary/90 !px-6 !py-2"
+    />
+  </div>
+</div>

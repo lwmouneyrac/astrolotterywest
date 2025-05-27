@@ -1,0 +1,44 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+    {
+        frontmatter.video && (
+            <iframe
+                width="560"
+                height="315"
+                src={frontmatter.video}
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+            />
+        )
+    }
+    <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
+    <p><em>{frontmatter.description}</em></p>
+    <p>Written by: {frontmatter.author}</p>
+    {
+        frontmatter.image && frontmatter.image.url && (
+            <img
+                src={frontmatter.image.url}
+                width="300"
+                alt={frontmatter.image.alt}
+            />
+        )
+    }
+    <div class="flex flex-wrap">
+        {
+            frontmatter.tags.map((tag: string) => (
+                <p class="m-1 border border-dotted border-[#a1a1a1] rounded-lg p-2 text-lg bg-[#f8fcfd]">
+                    <a href={`/tags/${tag}`} class="text-[#00539f]">{tag}</a>
+                </p>
+            ))
+        }
+    </div>
+    <slot />
+</BaseLayout>

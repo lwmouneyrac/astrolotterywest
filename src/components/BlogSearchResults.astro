@@ -1,11 +1,12 @@
 ---
 import BlogCardRectangle from "./BlogCardRectangle.astro";
 import BlogCardSquare from "./BlogCardSquare.astro";
-import AdPlayOnlineSquare from "./AdPlayOnlineSquare.astro";
 import Button from "./Button.astro";
+import { getCollection } from "astro:content";
+import { searchStore } from "../store";
 
 // Real blog data from Lotterywest (the ads are already injected in it)
-const blogPosts = [
+const blogPostsJson = [
   {
     title: "A Super win for WA",
     text: "Tropical island is first stop for Superdraw winner",
@@ -105,6 +106,24 @@ const blogPosts = [
     link: "https://www.lotterywest.wa.gov.au/lotterywest/the-winning-experience/another-saturday-lotto-win",
   },
 ];
+
+const search = searchStore.get();
+
+console.log("search", search);
+
+const posts = await getCollection("post");
+
+// Filter search
+const searchPost = posts.filter(
+  (post) => post.body?.includes(search) || post.data.title.includes(search),
+);
+
+console.log("search", search);
+
+// sort the posts by alphabetical markeddown name
+const blogPosts = searchPost.sort((a, b) => a.data.id - b.data.id);
+
+// console.log("search", posts);
 ---
 
 <div class="mb-12">
@@ -126,25 +145,25 @@ const blogPosts = [
           <div class={isRectangle ? "col-span-1 lg:col-span-2" : "col-span-1"}>
             {isRectangle ? (
               <BlogCardRectangle
-                title={post.title}
-                text={post.text}
-                imageUrl={post.imageUrl}
-                link={post.link}
-                category={post.category}
-                buttonText={post.buttonText || "Read more"}
+                title={post.data.title}
+                text={post.data.text}
+                imageUrl={post.data.imageUrl}
+                link={`/posts/${post.id}`}
+                category={post.data.category}
+                buttonText={post.data.buttonLabel || "Read more"}
               />
             ) : (
               <BlogCardSquare
-                title={post.title}
-                text={post.text}
-                imageUrl={post.imageUrl}
-                link={post.link}
-                category={post.category}
-                buttonText={post.buttonText || "Read more"}
-                secondLink={post.secondLink}
-                secondButtonText={post.secondButtonText || "Check me"}
-                buttonStyle={post.buttonStyle}
-                bgStyle={post.bgStyle}
+                title={post.data.title}
+                text={post.data.text}
+                imageUrl={post.data.imageUrl}
+                link={`/posts/${post.id}`}
+                category={post.data.category}
+                buttonText={post.data.buttonLabel || "Read more"}
+                secondLink={post.data.secondButtonUrl}
+                secondButtonText={post.data.secondButtonLabel || "Check me"}
+                buttonStyle={post.data.buttonStyle}
+                bgStyle={post.data.bgStyle}
               />
             )}
           </div>

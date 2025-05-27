@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/ContentLayout.astro
+layout: ../../layouts/PostLayout.astro
 title: 'Working with Healthway'
 image:
     url: 'https://www.lotterywest.wa.gov.au/assets/grants-archive/images/2019LotterywestHealthwaygrants1096x400.jpg'

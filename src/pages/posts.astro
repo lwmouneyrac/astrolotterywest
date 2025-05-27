@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const allContents = Object.values(
+	import.meta.glob("../pages/posts/*.md", { eager: true }),
+);
+
+const pageTitle = "Posts";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	{allContents.map((content: any) => <content.Content />)}
+</BaseLayout>

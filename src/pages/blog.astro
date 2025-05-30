@@ -2,9 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Crumbtrail from "../components/Crumbtrail.astro";
 import BlogSearchInputs from "../components/BlogSearchInputs.astro";
-import BlogSearchResults from "../components/BlogSearchResults.astro";
+import BlogSearchResults from "../components/BlogSearchResults.jsx";
+import { getCollection } from "astro:content";
 
 const pageTitle = "The winning experience blog";
+const posts = await getCollection("post");
 ---
 
 <>
@@ -21,7 +23,7 @@ const pageTitle = "The winning experience blog";
                 </div>
                 <div class="max-width-container flex flex-col">
                     <BlogSearchInputs />
-                    <BlogSearchResults />
+                    <BlogSearchResults posts={posts} />
                 </div>
             </div>
         </div>

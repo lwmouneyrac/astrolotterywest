@@ -7,15 +7,9 @@ export default function BlogSearchResults({ posts }) {
 
   const [search, setSearch] = useState('');
 
-  const searchPost = posts.filter(
-    (post) => post.body?.includes(search) || post.data.title.includes(search),
-  );
-
-  // sort the posts by alphabetical markeddown name
-  const blogPosts = searchPost.sort((a, b) => a.data.id - b.data.id);
-
   useEffect(() => {
     const searchInput = document.getElementById('searchInput');
+    console.log("searchInput", searchInput)
     const handleInput = (e) => {
       console.log("event: ", e)
       setSearch(e.target.value)
@@ -26,6 +20,13 @@ export default function BlogSearchResults({ posts }) {
       return () => searchInput.removeEventListener('input', handleInput)
     }
   }, [])
+
+  const searchPost = posts.filter(
+    (post) => post.body?.toLowerCase().includes(search.toLowerCase()) || post.data.title.toLowerCase().includes(search.toLowerCase()),
+  );
+
+  // sort the posts by alphabetical markeddown name
+  const blogPosts = searchPost.sort((a, b) => a.data.id - b.data.id);
 
   return (<div class="mb-12">
     <div

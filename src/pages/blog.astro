@@ -23,7 +23,7 @@ const posts = await getCollection("post");
                 </div>
                 <div class="max-width-container flex flex-col">
                     <BlogSearchInputs />
-                    <BlogSearchResults posts={posts} />
+                    <BlogSearchResults posts={posts} client:load />
                 </div>
             </div>
         </div>
